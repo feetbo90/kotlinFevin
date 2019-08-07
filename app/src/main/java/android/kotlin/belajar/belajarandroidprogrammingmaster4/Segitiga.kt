@@ -13,5 +13,7 @@ class Segitiga : AppCompatActivity() {
 
         val message = intent.getStringExtra(Objek.kirimPesanString)
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+
+
     }
 }
