@@ -1,6 +1,7 @@
 package android.kotlin.belajar.belajarandroidprogrammingmaster4
 
 import android.content.Context
+import android.content.Intent
 import android.kotlin.belajar.belajarandroidprogrammingmaster4.`object`.Objek
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -16,10 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-//        val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
-//        val input = sharedPref.edit()
-
-
+        val sharedPreferences = application.getSharedPreferences("login", Context.MODE_PRIVATE)
+        val nama = sharedPreferences.getString(Objek.username, Objek.kosong)
+        val pswd = sharedPreferences.getString(Objek.password, Objek.kosong)
+        if(nama != "" && pswd != "") {
+            val intent = Intent(this@MainActivity, TampilanAwal::class.java)
+            startActivity(intent)
+        }
 
         btn.setOnClickListener {
             user = username.text.toString()
