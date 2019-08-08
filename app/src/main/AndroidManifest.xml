@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TampilanAwal" />
-        <activity android:name=".Segitiga"></activity>
+        <activity android:name=".Segitiga" />
+        <activity android:name=".TestSpinner"></activity>
     </application>
 
 </manifest>
